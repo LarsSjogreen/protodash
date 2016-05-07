@@ -3,6 +3,9 @@ logs
 *.log
 npm-debug.log*
 
+# Project specific
+*.secretpasswords
+
 # Sublime
 *.sublime-project
 *.sublime-workspace
