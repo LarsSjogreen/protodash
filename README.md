@@ -10,6 +10,13 @@ A quick hack to aggregate a number of Akvo metrics on one page. Static HTML serv
     
 ***
 
+## Configuration
+
+    > cd backend/local_config
+    > cp secretpasswords.json.template secretpasswords.json
+
+Edit secretpasswords.json to add usernames, passwords and API-url:s to relevant end points.
+
 ## Running Protodash
 
     > node app.js
