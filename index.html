@@ -1,0 +1,84 @@
+<html>
+<!-- JSFiddle here: https://jsfiddle.net/c6v6waj4/  -->
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://cdn.statuspage.io/se-v2.js"></script>
+	<script type="text/javascript" src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="liquidFillGauge.js"></script>
+</head>
+<body>
+<div>
+
+<h1>Proto-dash</h1>
+
+<div class="container">
+	<div class="infobox green">
+		<span class="close">&times;</span>
+		<h3>Operational status</h3>
+		<p>
+		Current status: <span id="status">...loading...</span>
+		</p>
+	</div>
+	<div class="infobox">
+		<span class="close">&times;</span>
+		<h3>Dash issue throughput</h3>
+		<img src="https://graphs.waffle.io/akvo/akvo-dash/throughput.svg"/>
+	</div>
+	
+	<div class="infobox">
+		<span class="close">&times;</span>
+		<h3>Flow issue throughput</h3>
+		<img src="https://graphs.waffle.io/akvo/akvo-flow/throughput.svg"/>
+	</div>
+	
+	<div id="rsr_throughput" class="infobox">
+		<span class="close">&times;</span>
+		<h3>RSR issue throughput</h3>
+		<img src="https://graphs.waffle.io/akvo/akvo-RSR/throughput.svg"/>
+	</div>
+	
+	<div id="caddisfly_throughput" class="infobox">
+		<span class="close">&times;</span>
+		<h3>Caddisfly issue throughput</h3>
+		<img src="https://graphs.waffle.io/akvo/akvo-caddisfly/throughput.svg"/>
+	</div>
+
+	<div id="rsr_performance" class="infobox">
+		<span class="close">&times;</span>
+		<h3>RSR Performance</h3>
+		<img src="http://graphite.support.akvo-ops.org/render?format=png&from=-2w&target=summarize%28stats.timers.rsr.live.view.%2A.mean%2C+%275min%27%2C+%27avg%27%29&height=200&width=540&bgcolor=ff000000&fgcolor=%23404040&majorGridLineColor=%23D9D9D9&minorGridLineColor=%23F2F2F2&hideLegend=true&hideAxes=false&colorList=%23387aa3%2C%23649eb9%2C%239dc2d3%2C%23a888c2%2C%23d8aad6%2C%23e7cbe6&vtitle&title"/>
+	</div>
+	<div id="api_performance" class="infobox">
+		<span class="close">&times;</span>
+		<h3>API Performance</h3>
+		<img src="http://graphite.support.akvo-ops.org/render?format=png&from=-2w&target=summarize%28stats.timers.rsr.live.view.v1.%2A.mean%2C+%275min%27%2C+%27avg%27%29&height=200&width=540&bgcolor=ff000000&fgcolor=%23404040&majorGridLineColor=%23D9D9D9&minorGridLineColor=%23F2F2F2&hideLegend=true&hideAxes=false&colorList=%23387aa3%2C%23649eb9%2C%239dc2d3%2C%23a888c2%2C%23d8aad6%2C%23e7cbe6&vtitle&title"/>
+	</div>
+	<div id="rsr_hits" class="infobox">
+		<span class="close">&times;</span>
+		<h3>RSR Hits</h3>
+		<img src="http://graphite.support.akvo-ops.org/render?format=png&from=-3h&target=summarize%28sumSeries%28stats.counters.rsr.live.response.%2A.count%29%2C+%2260s%22%29&height=200&width=540&bgcolor=ff000000&fgcolor=%23404040&majorGridLineColor=%23D9D9D9&minorGridLineColor=%23F2F2F2&hideLegend=true&hideAxes=false&colorList=%23387aa3%2C%23649eb9%2C%239dc2d3%2C%23a888c2%2C%23d8aad6%2C%23e7cbe6&vtitle&title"/>
+	</div>
+	<div id="liquidGaugeDemo" class="infobox">
+		<span class="close">&times;</span>
+		<h3>Pipedrive Month</h3>
+		<div>
+		<svg id="fillgauge1" width="97%" height="100" onclick="gauge1.update(NewValue());"></svg>
+		<div class="gaugelabel">Deals added</div>
+		</div>
+		<div class="padit"></div>
+		<div class="gaugecontainer">
+		<div><svg id="fillgauge2" class="minigauge" onclick="gauge2.update(NewValue());"></svg><div class="label-small">Calls</div></div>
+		<div><svg id="fillgauge3" class="minigauge" onclick="gauge3.update(NewValue());"></svg><div class="label-small">Emails</div></div>
+		<div><svg id="fillgauge4" class="minigauge" onclick="gauge4.update(NewValue());"></svg><div class="label-small">Meetings</div></div>
+		<div><svg id="fillgauge5" class="minigauge" onclick="gauge5.update(NewValue());"></svg><div class="label-small">Proposals<br/>presented</div></div>
+		<div><svg id="fillgauge6" class="minigauge" onclick="gauge6.update(NewValue());"></svg><div class="label-small">Deals<br/>won</div></div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+	<script src="liquidTestConfig.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

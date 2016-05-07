@@ -1,0 +1,89 @@
+body {
+	margin-top: 20px;
+	font-family: Helvetica, Arial;
+	font-size: 20px;
+	background-color: #bbb;
+}
+
+h1, h3 {
+	text-align: center;
+text-shadow: 	   0 0 5px #fff,
+                   0 0 9px #fff,
+                   0 0 19px #fff,
+                   0 0 29px #5e8000,
+                   0 0 45px #5e8000,
+                   0 0 60px #5e8000,
+                   0 0 70px #5e8000,
+                   0 0 100px #5e8000;
+}
+
+.hidden {
+	display: none;
+}
+
+.liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+
+.padit {
+	padding: 10px;
+}
+
+.gaugelabel {
+	text-align: center;
+}
+
+.label-small {
+	text-align: center;
+}
+
+.gaugecontainer {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.minigauge {
+	width: 100%;
+	height: 60;
+}
+
+
+.infobox .close {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    z-index: 100;
+    cursor: pointer;
+    border-color: #999;
+    border-width: 4px;
+    border-style: hidden;
+    border-radius: 16px;
+    width: 16px;
+    padding-left: 5px;
+    background-color: #bbb;
+    font-weight: bolder;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 15px;
+}
+
+.infobox {
+	position: relative;
+	border-width: 1px;
+	border-style: dashed;
+	border-color: #BBB;
+	padding: 6px;
+	width: 540px;
+	min-width: 540px;
+	margin: 10px;
+	background-color: #ddd;
+	box-shadow: 7px 7px 5px #888888;
+}
+
+.green {
+	background-color: #ccc;
+}
