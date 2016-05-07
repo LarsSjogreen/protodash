@@ -1,0 +1,27 @@
+{
+  "name": "protodash_backend",
+  "version": "1.0.0",
+  "description": "A simple web server for Protodash",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larssjogreen/protodash.git"
+  },
+  "keywords": [
+    "Dashboard",
+    "node",
+    "quickanddirty"
+  ],
+  "author": "Lars Sjögreen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larssjogreen/protodash/issues"
+  },
+  "homepage": "https://github.com/larssjogreen/protodash#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
