@@ -1,6 +1,7 @@
 var express = require('express');
 var http = require('http');
 var request = require('request');
+//var url = require('url');
 
 var githubApi = require('github');
 
@@ -15,7 +16,10 @@ var github = new githubApi({
     }
 });
 
+// https://www.npmjs.com/package/apicache
+// https://github.com/kwhitley/apicache
 var apicache = require('apicache').options({ debug: false }).middleware;
+
 var app = express();
 
 var passwordsJson = require('./local_config/secretpasswords');
@@ -28,7 +32,8 @@ app.get('/pipedrive', function(req, res) {
 
 app.get('/checkins', apicache('5 minutes'), function(req, res) {
 	setTimeout(function() {
-		var jsonResponse = { name: 'RSR',
+		var jsonResponse = { 
+				name: 'RSR',
 			 	data: { 
 			 		date: new Date().toLocaleString(),
 			 		checkinsWeek: 23
@@ -45,6 +50,10 @@ app.get('/checkReal', apicache('5 minutes'), function(req, res) {
 	});
 });
 
+app.get('/image', function(req, res) {
+    request.get(req.query.url).pipe(res);
+});
+
 app.listen(80, function () {
   console.log('Protodash server listening on port 80.');
 });
@@ -56,7 +65,7 @@ var orgInfo = function(orgName, returnFunc) {
 	github.orgs.getMembers({
     		org: orgName
 		}, function(err, res) {
-			var retString = "Akvo team members: ";
+			var retString = "";
 			var userList = [];
 			for (var i=0;i<res.length;i++) {
 				userList.push(res[i].login);
