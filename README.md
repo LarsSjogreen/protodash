@@ -25,6 +25,19 @@ Point your preferred web browser at http://localhost:80/ and enjoy.
 
 ***
 
+## Features
+
+* Cache middleware (kwhitley/apicache) for routes that hit external API:s. (Not fully implemented, but middleware is installed and in use on one route.)
+* Github api integration (mikedeboer/node-github).
+
+***
+
 ### Plans for the future
 
 Yes. Probably adding a few more sources of data.
+
+#### Ideas for the future
+* Github statistics using d3.js
+* Reamaze statistics using d3.js
+* Sorting widgets?
+* Hiding widgets (and keeping them hidden using url parameters?)
