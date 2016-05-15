@@ -1,8 +1,8 @@
 var express = require('express');
 var http = require('http');
 var request = require('request');
+var Pipedrive = require('pipedrive');
 //var url = require('url');
-
 var githubApi = require('github');
 
 var github = new githubApi({
@@ -16,18 +16,32 @@ var github = new githubApi({
     }
 });
 
+var passwordsJson = require('./local_config/secretpasswords');
+
 // https://www.npmjs.com/package/apicache
 // https://github.com/kwhitley/apicache
 var apicache = require('apicache').options({ debug: false }).middleware;
 
 var app = express();
 
-var passwordsJson = require('./local_config/secretpasswords');
+var pipedrive = new Pipedrive.Client(passwordsJson.Pipedrive.apikey);
 
 app.use(express.static('../frontend'));
 
-app.get('/pipedrive', function(req, res) {
-//	res.send(passwordsJson.Pipedrive.url);
+// Api docs here: https://developers.pipedrive.com/v1
+// Node docs here: https://github.com/pipedrive/client-nodejs
+app.get('/pipedrive', apicache('5 minutes'), function(req, res) {
+	pipedrive.Deals.getAll({}, function (err, deals) {
+		if (err) throw err;
+		var totalDealsValue = 0;
+		for (var i = 0; i < deals.length; i++) {
+			totalDealsValue += deals[i].value;
+		}
+		var dealsValue = {
+			valueOfSomeDeals: totalDealsValue
+		};
+		res.send(JSON.stringify(dealsValue));
+	});
 });
 
 app.get('/checkins', apicache('5 minutes'), function(req, res) {
