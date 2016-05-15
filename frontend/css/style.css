@@ -1,20 +1,13 @@
 body {
 	margin-top: 20px;
-	font-family: Helvetica, Arial;
+	font-family: 'Helvetica Neue', sans-serif;
 	font-size: 20px;
 	background-color: #bbb;
 }
 
 h1, h3 {
 	text-align: center;
-text-shadow: 	   0 0 5px #fff,
-                   0 0 9px #fff,
-                   0 0 19px #fff,
-                   0 0 29px #5e8000,
-                   0 0 45px #5e8000,
-                   0 0 60px #5e8000,
-                   0 0 70px #5e8000,
-                   0 0 100px #5e8000;
+	font-weight: 120;
 }
 
 .hidden {

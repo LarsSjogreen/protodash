@@ -12,18 +12,7 @@
 <h1>Proto-dash</h1>
 
 <div class="container">
-	<div class="infobox green">
-		<span class="close">&times;</span>
-		<h3>Operational status</h3>
-		<p>
-		Current status: <span id="status">...loading...</span>
-		</p>
-	</div>
-	<div class="infobox">
-		<span class="close">&times;</span>
-		<h3>Akvo team members</h3>
-		<p class="teammembers" id="akvoteam" onclick="loadteam()">Click me...</p>
-	</div>
+
 	<div class="infobox">
 		<span class="close">&times;</span>
 		<h3>Dash issue throughput</h3>
@@ -42,11 +31,6 @@
 		<img src="https://graphs.waffle.io/akvo/akvo-RSR/throughput.svg"/>
 	</div>
 	
-	<div id="caddisfly_throughput" class="infobox">
-		<span class="close">&times;</span>
-		<h3>Caddisfly issue throughput</h3>
-		<img src="https://graphs.waffle.io/akvo/akvo-caddisfly/throughput.svg"/>
-	</div>
 
 	<div id="rsr_performance" class="infobox">
 		<span class="close">&times;</span>
@@ -79,6 +63,27 @@
 		<div><svg id="fillgauge6" class="minigauge" onclick="gauge6.update(NewValue());"></svg><div class="label-small">Deals<br/>won</div></div>
 		</div>
 	</div>
+
+	<div id="caddisfly_throughput" class="infobox">
+		<span class="close">&times;</span>
+		<h3>Caddisfly issue throughput</h3>
+		<img src="https://graphs.waffle.io/akvo/akvo-caddisfly/throughput.svg"/>
+	</div>
+
+	<div class="infobox green">
+		<span class="close">&times;</span>
+		<h3>Operational status</h3>
+		<p>
+		Current status: <span id="status">...loading...</span>
+		</p>
+	</div>
+
+	<div class="infobox">
+		<span class="close">&times;</span>
+		<h3>Akvo team members</h3>
+		<p class="teammembers" id="akvoteam" onclick="loadteam()">Click me...</p>
+	</div>
+
 </div>
 
 </div>

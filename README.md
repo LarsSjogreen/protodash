@@ -19,6 +19,7 @@ Edit secretpasswords.json to add usernames, passwords and API-url:s to relevant 
 
 ## Running Protodash
 
+	> cd backend
     > node app.js
 
 Point your preferred web browser at http://localhost:80/ and enjoy.
@@ -38,6 +39,9 @@ Yes. Probably adding a few more sources of data.
 
 #### Ideas for the future
 * Github statistics using d3.js
+* Pipedrive statistics
 * Reamaze statistics using d3.js
 * Sorting widgets?
+* Grouping widgets?
+* Modularizing code
 * Hiding widgets (and keeping them hidden using url parameters?)
